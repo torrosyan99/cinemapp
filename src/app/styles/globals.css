@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@theme {
+    --color-background: #080F1C;
+    --color-surface: #111C2D;
+    --color-card: #1B2A40;
+    --color-primary: #38BDF8;
+    --color-brand: #F43F5E;
+    --color-text: #F1F5F9;
+    --color-muted: #94A3B8;
+    --color-border: #bebebe;
+    --font-body: var(--font-google-body), sans-serif;
+    --font-heading: var(--font-google-heading), Georgia, serif;
+}
+
+@layer base {
+    body {
+        @apply font-body bg-background text-text min-h-screen flex flex-col max-md:text-sm;
+    }
+}
+
+
+@layer components {
+    .section-margin {
+        @apply mt-20 max-lg:mt-16 max-md:mt-8;
+    }
+
+    .section-padding  {
+        @apply pt-20 max-lg:pt-16 max-md:pt-8;
+    }
+}
