@@ -103,7 +103,7 @@ export const ExpandableMenu = ({
         id={contentId}
         inert={!isOpen}
         className={clsx(
-          "absolute top-full z-30 min-w-40 pt-2",
+          "absolute top-full  z-30 min-w-40 pt-2",
           "grid transition-[grid-template-rows,opacity,visibility]",
           "max-md:static max-md:min-w-0 max-md:pt-0",
           alignmentClasses[align],
@@ -123,7 +123,7 @@ export const ExpandableMenu = ({
           <div
             className={clsx(
               "rounded-2xl border border-white/10 " +
-              "bg-surface p-2 shadow-xl",
+              "menu-scrollbar bg-surface max-h-100 overflow-y-auto p-2 shadow-xl",
               "max-md:mt-2 max-md:shadow-none",
               contentClassName,
             )}

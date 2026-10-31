@@ -4,7 +4,8 @@ import {Text} from "@/shared/ui/Text";
 import {VoteAverage} from "@/shared/ui/VoteAverage";
 import {Button} from "@/shared/ui/Button";
 import PlaySvg from '@/shared/assets/icons/play.svg'
-import HeartSvg from '@/shared/assets/icons/heart.svg'
+import {PATHS} from "@/shared/config/paths";
+import {ToggleFavorite} from "@/features/ToggleFavorite";
 
 
 export const HeroMovieInfo = (movie:Movie) => {
@@ -24,14 +25,11 @@ export const HeroMovieInfo = (movie:Movie) => {
         {overview}
       </Text>
       <div className={'flex gap-4'}>
-        <Button>
+        <Button href={PATHS.MOVIE(movie.id)}>
           <PlaySvg />
           <span>View</span>
         </Button>
-        <Button className={'group max-md:size-11'} mode={'outline'}>
-          <HeartSvg className={'group-hover:fill-brand group-hover:text-brand '} />
-          <span className={'max-md:hidden'}>Add to Favorites</span>
-        </Button>
+        <ToggleFavorite movieId={movie.id} />
       </div>
     </div>
   );

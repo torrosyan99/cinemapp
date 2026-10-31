@@ -3,6 +3,7 @@
 import { Button } from "@/shared/ui/Button";
 import ShuffleSvg from "@/shared/assets/icons/shuffle.svg";
 import {useRouter} from "next/navigation";
+import {PATHS} from "@/shared/config/paths";
 
 interface SurpriseMeButtonProps {
   movieIds: number[];
@@ -14,7 +15,7 @@ export const SurpriseMeButton = ({ movieIds }: SurpriseMeButtonProps) => {
     if (movieIds.length === 0) return;
 
     const movieId = movieIds[Math.floor(Math.random() * movieIds.length)];
-    router.push(`/movie/${movieId}`);
+    router.push(PATHS.MOVIE(movieId));
   };
 
   return (

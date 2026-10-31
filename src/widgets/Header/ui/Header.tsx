@@ -2,11 +2,13 @@ import Link from "next/link";
 
 import { Container } from "@/shared/ui/Container";
 import { Logo } from "@/shared/ui/Logo";
-import {Navigation} from "./Navigation";
+import {HeaderNavigation} from "./HeaderNavigation";
 import {PATHS} from "@/shared/config/paths";
-import {Menu} from "@/widgets/Header/ui/Menu";
+import {HeaderMenu} from "@/widgets/Header/ui/HeaderMenu";
+import {getMovieGenres} from "@/entities/movie/server";
 
-export const Header = () => {
+export const Header = async () => {
+  const genres = await getMovieGenres(true)
 
     return (
         <header className="h-20 max-md:h-16">
@@ -18,8 +20,8 @@ export const Header = () => {
                 >
                     <Logo />
                 </Link>
-              <Navigation key={'navigation'} className={'max-md:hidden'} />
-              <Menu />
+              <HeaderNavigation genres={genres} key={'navigation'} className={'max-md:hidden'} />
+              <HeaderMenu genres={genres} />
             </Container>
         </header>
     );

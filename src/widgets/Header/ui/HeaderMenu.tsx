@@ -3,9 +3,15 @@
 import {BurgerButton} from "@/shared/ui/BurgerButton";
 import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
-import {Navigation} from "@/widgets/Header/ui/Navigation";
+import {HeaderNavigation} from "@/widgets/Header/ui/HeaderNavigation";
+import {Genre} from "@/entities/movie";
 
-export const Menu = () => {
+
+interface HeaderMenuProps {
+  genres:Genre[]
+}
+
+export const HeaderMenu = ({genres}:HeaderMenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const closeMenu = () => setIsOpen(false)
@@ -42,8 +48,7 @@ export const Menu = () => {
             ease: "easeInOut",
           }}
         >
-
-          <Navigation  onNavigate={closeMenu}/>
+          <HeaderNavigation genres={genres} onNavigate={closeMenu}/>
         </motion.div>}
 
       </AnimatePresence>

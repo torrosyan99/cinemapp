@@ -19,7 +19,6 @@ export const api = async <T>({
   Object.entries(params).forEach(([key, value]) => {
     url.searchParams.set(key, String(value));
   })
-  console.log(url.toString())
 
   const headers = new Headers(options?.headers);
 

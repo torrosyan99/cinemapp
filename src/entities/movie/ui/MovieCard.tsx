@@ -4,6 +4,7 @@ import FilmErrorSvg from "@/shared/assets/icons/film-error.svg";
 import { VoteAverage } from "@/shared/ui/VoteAverage";
 import type { MovieListItem } from "../model/types";
 import Link from "next/link";
+import {PATHS} from "@/shared/config/paths";
 
 interface MovieCardProps {
     movie: MovieListItem;
@@ -20,7 +21,7 @@ export const MovieCard = ({ movie, className }: MovieCardProps) => {
                 "group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/8 bg-surface shadow-lg shadow-black/10 transition-[border-color,box-shadow] duration-300 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 motion-reduce:transition-none",
                 className,
             )}
-            href={`/movie/${movie.id}`}
+            href={PATHS.MOVIE(movie.id)}
         >
             <div className="shrink-0 overflow-hidden border-b border-white/5 bg-card">
                 {movie.poster_path ? (

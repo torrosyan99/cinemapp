@@ -33,4 +33,27 @@
     .section-padding  {
         @apply pt-20 max-lg:pt-16 max-md:pt-8;
     }
+
+    .menu-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #f43f5e99 transparent;
+    }
+
+    .menu-scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .menu-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .menu-scrollbar::-webkit-scrollbar-thumb {
+        background: #f43f5e99;
+        border: 2px solid var(--color-surface);
+        border-radius: 999px;
+    }
+
+    .menu-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: var(--color-brand);
+    }
 }

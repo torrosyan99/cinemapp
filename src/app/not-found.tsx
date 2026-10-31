@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import PlayIcon from "@/shared/assets/icons/play.svg";
 import { PATHS } from "@/shared/config/paths";
 import { Button } from "@/shared/ui/Button";
 import { Container } from "@/shared/ui/Container";
@@ -26,9 +25,7 @@ export default function NotFound() {
                     className="mt-6 flex items-center gap-4 text-[144px] leading-none font-extrabold tracking-tighter text-text max-md:gap-3 max-md:text-[104px]"
                 >
                     <span>4</span>
-                    <span className="flex h-32 w-24 shrink-0 items-center justify-center rounded-3xl border-2 border-brand/40 bg-brand/10 shadow-[0_0_60px_-20px_var(--color-brand)] max-md:h-24 max-md:w-18 max-md:rounded-2xl">
-                        <PlayIcon className="size-10 shrink-0 translate-x-px text-brand max-md:size-8" />
-                    </span>
+                    <span className="text-brand">0</span>
                     <span>4</span>
                 </div>
 

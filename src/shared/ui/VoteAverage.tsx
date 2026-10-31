@@ -10,7 +10,7 @@ interface VoteAverageProps {
 export const VoteAverage = ({vote, className, iconClass}: VoteAverageProps) => {
   return (
     <div className={clsx('flex items-center gap-2', className)}>
-      <StarSvg className={clsx('shrink-0 text-orange-400', iconClass)} />
+      <StarSvg className={clsx('shrink-0 text-orange-400', iconClass ?? 'size-6')} />
       <span>{vote.toFixed(1)}</span>
     </div>
   );
